@@ -7,6 +7,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <Link to='/index'>Go to index</Link>
+          <h1>sss</h1>
         </header>
       </div>
     );
