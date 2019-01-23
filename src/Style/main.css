@@ -45,12 +45,11 @@ a{
     top: 10px;
 }
 .strand_info{
-    width: 89%;
+    width: 400px;
     font-size: 0.8rem;
-    display: flex;
     position: relative;
-    left: 85px;
-    bottom: 20px;
+    left: 15px;
+    top: 20px;
 }
 .strand_visit{
     margin-right: 5px;
@@ -90,6 +89,7 @@ a{
     background: white;
     box-shadow: 0px 0px 1px 1px;
     position: fixed;
+    z-index: 9;
 }
 .header_back{
     font-size: 1.6rem;
@@ -98,13 +98,59 @@ a{
 }
 .header_title{
     margin:0 auto;
-    margin-left: 130px;
+    margin-left: 120px;
 }
 .topic_content{
+    width: 300px;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    line-height: 20px;
 }
 .topic_author{
     padding-top: 50px;
-    width: 100%;
+    width: 300px;
     height: 50px;
-    background: red;
+}
+.topic_author_name{
+    position:relative;
+    margin-left: 15px;
+    top: 10px;
+}
+.topic_info{
+    position: relative;
+    left: 15px;
+    top: 20px;
+    font-size: 0.8rem;
+    width: 300px;
+}
+.topic_reply{
+    width: 300px;
+    min-height: 50px;
+    margin-left: 20px;
+    margin-top: 20px;
+    background: rgb(245, 245, 245);
+}
+.reply_avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    vertical-align: top;
+    margin: 10px 0 0 10px;
+}
+.reply_name{
+    margin-left: 10px;
+    font-size: 0.8rem;
+}
+.reply_content{
+    position: relative;
+    left: 60px;
+    top: -10px;
+    font-size: 0.5rem;
+    width: 250px;
+}
+.reply_count{
+    font-size: 0.6rem;
+    margin-left: 10px;
+    color: rgb(127, 207, 7);
 }

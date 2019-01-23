@@ -29,9 +29,9 @@ class Post extends Component {
                         <span className='strand_tab'>{tabMap[tab]}</span>}<span>{title}</span></div>
                     <div className='strand_s'>
                         <div className='strand_info'>
-                            <div className='strand_visit'>浏览: {visit_count}</div>
-                            <div className='strand_reply'>回复: {reply_count}</div>
-                            <div className='strand_create'>发布于: {create_at}</div>
+                            <div className='strand_visit' style={{float: 'left'}}>浏览: {visit_count}</div>
+                            <div className='strand_reply' style={{float: 'left'}}>回复: {reply_count}</div>
+                            <div className='strand_create' style={{float: 'left'}}>发布于: {create_at}</div>
                         </div>
                     </div>
                 </Link>
@@ -49,6 +49,16 @@ class Main extends Component {
             tab: 'all',
             limit: 15,
             resdata: [],
+            scrollHandle: () => {
+                let height = document.body.scrollTop || document.documentElement.scrollTop
+                console.log(height, this.refs.post.clientHeight)
+                if( ( height / this.refs.post.scrollHeight ) > 0.48 ){
+                    this.setState((prevState) => ({
+                        page: prevState.page + 1
+                    }))
+                    this.getData()
+                }
+            },
         }
 
         this.getData = async () => {
@@ -73,17 +83,12 @@ class Main extends Component {
         this.getData()
     }
 
+    componentWillUnmount(){
+        window.removeEventListener('scroll', this.state.scrollHandle)
+    }
+
     componentDidMount(){
-        window.addEventListener('scroll', () => {
-            let height = document.body.scrollTop || document.documentElement.scrollTop
-            if(( height === this.refs.post.scrollHeight ) ){
-                this.setState((prevState) => ({
-                    page: prevState.page + 1
-                }))
-                this.getData()
-            }
-        }
-        )
+        window.addEventListener('scroll', this.state.scrollHandle)
     }
 
     render(){
