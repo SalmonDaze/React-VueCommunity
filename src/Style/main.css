@@ -22,7 +22,7 @@ a{
     width: 100%;
 }
 .strand{
-    width: 100%;
+    width: 89%;
     height: 70px;
     border-bottom: 1px solid rgb(230, 230, 230);
 }
@@ -42,4 +42,44 @@ a{
     position: relative;
     left: 15px;
     top: 10px;
+}
+.strand_info{
+    width: 89%;
+    font-size: 0.8rem;
+    display: flex;
+    position: relative;
+    left: 85px;
+    bottom: 20px;
+}
+.strand_visit{
+    margin-right: 5px;
+    width: 80px;
+}
+.strand_reply{
+    margin-right: 5px;
+    width: 60px;
+}
+.strand_s{
+    width: 100%;
+}
+.strand_tab{
+    background: rgb(230, 230, 230);
+    color: rgb(107, 107, 107);
+    padding: 1px 4px 1px 4px;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+.strand_top{
+    background: red;
+    color: white;
+    padding: 1px 4px 1px 4px;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+.strand_good{
+    background: greenyellow;
+    color: rgb(107, 107, 107);
+    padding: 1px 4px 1px 4px;
+    border-radius: 4px;
+    margin-right: 5px;
 }
