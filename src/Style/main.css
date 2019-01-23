@@ -4,6 +4,7 @@
 }
 a{
     color: black;
+    text-decoration: none;
 }
 .category{
     float: left;
@@ -82,4 +83,28 @@ a{
     padding: 1px 4px 1px 4px;
     border-radius: 4px;
     margin-right: 5px;
+}
+.header_con{
+    width: 100%;
+    height: 45px;
+    background: white;
+    box-shadow: 0px 0px 1px 1px;
+    position: fixed;
+}
+.header_back{
+    font-size: 1.6rem;
+    margin-left: 15px;
+    position: relative;
+}
+.header_title{
+    margin:0 auto;
+    margin-left: 130px;
+}
+.topic_content{
+}
+.topic_author{
+    padding-top: 50px;
+    width: 100%;
+    height: 50px;
+    background: red;
 }

@@ -5,6 +5,7 @@ import  index  from '../container/index.jsx'
 import { createTopic } from '../container/createTopic.jsx'
 import { User } from '../container/user.jsx'
 import { Message } from '../container/message.jsx'
+import { strandContent } from '../components/strandContent'
 
 const Routes = (
     <BrowserRouter>
@@ -14,6 +15,7 @@ const Routes = (
             <Route path='/createTopic' exact component={createTopic}></Route>
             <Route path='/message' exact component={Message}></Route>
             <Route path='/user' exact component={User}></Route>
+            <Route path='/topic/:id' exact component={strandContent}></Route>
         </Switch>
     </BrowserRouter>
 )

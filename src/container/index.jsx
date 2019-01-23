@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Footer } from '../components/Footer'
 import { apiGet } from '../utils/apiRequest'
 import dayjs from 'dayjs'
+import { Link } from 'react-router-dom'
 
 class Post extends Component {
     constructor(props){
@@ -21,16 +22,19 @@ class Post extends Component {
 
         return (
             <div className='strand'>
-                <img className='strand_avatar' src={author.avatar_url}/>
-                <div className='strand_title'>{top ? <span className='strand_top'>置顶</span> : good ? 
-        <span className='strand_good'>精华</span> : <span className='strand_tab'>{tabMap[tab]}</span>}<span>{title}</span></div>
-                <div className='strand_s'>
-                    <div className='strand_info'>
-                        <div className='strand_visit'>浏览: {visit_count}</div>
-                        <div className='strand_reply'>回复: {reply_count}</div>
-                        <div className='strand_create'>发布于: {create_at}</div>
+                <Link to={`/topic/${id}`}>
+                    <img className='strand_avatar' src={author.avatar_url}/>
+                    <div className='strand_title'>{top ? <span className='strand_top'>置顶</span> : good ? 
+                        <span className='strand_good'>精华</span> :
+                        <span className='strand_tab'>{tabMap[tab]}</span>}<span>{title}</span></div>
+                    <div className='strand_s'>
+                        <div className='strand_info'>
+                            <div className='strand_visit'>浏览: {visit_count}</div>
+                            <div className='strand_reply'>回复: {reply_count}</div>
+                            <div className='strand_create'>发布于: {create_at}</div>
+                        </div>
                     </div>
-                </div>
+                </Link>
             </div>
         )
     }
@@ -72,7 +76,7 @@ class Main extends Component {
     componentDidMount(){
         window.addEventListener('scroll', () => {
             let height = document.body.scrollTop || document.documentElement.scrollTop
-            if(( height / this.refs.post.scrollHeight ) > 0.48 ){
+            if(( height === this.refs.post.scrollHeight ) ){
                 this.setState((prevState) => ({
                     page: prevState.page + 1
                 }))
@@ -92,7 +96,7 @@ class Main extends Component {
                     <Post key={strand.id} author={strand.author} 
                     title={strand.title} create_at={this.formatTime(dayjs(strand.create_at))}
                     reply_count={strand.reply_count} visit_count={strand.visit_count}
-                    tab={strand.tab} good={strand.good} top={strand.top}  />
+                    tab={strand.tab} good={strand.good} top={strand.top} id={strand.id} />
                     ) }
                 </div>
                 <Footer currentCategory='首页'></Footer>
