@@ -4,6 +4,7 @@ import { Footer } from '../components/Footer'
 export class Message extends Component {
     constructor(props){
         super(props)
+
     }
 
     render(){

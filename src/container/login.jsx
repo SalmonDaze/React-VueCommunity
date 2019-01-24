@@ -2,34 +2,31 @@ import React, { Component } from 'react'
 import { Footer } from '../components/Footer'
 import { connect } from 'react-redux'
 import { login, logout } from '../Action/index'
-
+import PropTypes from 'prop-types'
 
 class Login extends Component{
     constructor(props){
         super(props)
 
-        this.state = {
-            token: ''
-        }
     }
-    
+
+    componentDidUpdate(){
+    }
+
     render(){
+
+        let { handleLogin, token } = this.props
+
         return(
             <div className='login_con'>
-                <input type="text" onChange={(e)=>{this.setState({token: e.target.value})}}/>
-                <button onClick={()=>{this.handleLogin(this.state.token)}}>登陆</button>
-                <Footer />
+                <button onClick={handleLogin} token={token}>登陆</button>
             </div>
         )
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return{
-        handleLogin: (token) => {
-            dispatch(login(token))
-        }
-    }
+Login.propTypes = {
+    handleLogin: PropTypes.func.isRequired
 }
 
-export default connect(mapDispatchToProps)(Login)
+export default Login

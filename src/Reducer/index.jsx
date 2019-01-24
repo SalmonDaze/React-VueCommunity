@@ -1,4 +1,4 @@
-export const logStatus = (state = [], action ) => {
+export const logStatus = (state = '', action ) => {
     switch(action.type){
         case 'LOGIN_IN':
             localStorage.setItem('accessToken', action.token)
