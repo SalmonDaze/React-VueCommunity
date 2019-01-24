@@ -49,9 +49,9 @@ class Main extends Component {
             tab: 'all',
             limit: 15,
             resdata: [],
+            isLoading: true,
             scrollHandle: () => {
                 let height = document.body.scrollTop || document.documentElement.scrollTop
-                console.log(height, this.refs.post.clientHeight)
                 if( ( height / this.refs.post.scrollHeight ) > 0.48 ){
                     this.setState((prevState) => ({
                         page: prevState.page + 1
@@ -66,7 +66,8 @@ class Main extends Component {
             let res = await apiGet('https://www.vue-js.com/api/v1/topics', { page, tab, limit})
             if( res.status === 200 ){
                 this.setState((prevState) => ({
-                    resdata: [...prevState.resdata, ...res.data.data]
+                    resdata: [...prevState.resdata, ...res.data.data],
+                    isLoading: false,
                 }))
             }
         }
@@ -93,10 +94,9 @@ class Main extends Component {
 
     render(){
         let res = this.state.resdata
-        console.log(this.state.resdata)
         return (
             <div className='container' onScroll={this.handleScroll}>
-                <div className='post_container' ref='post'>
+            { !this.state.isLoading ? <div><div className='post_container' ref='post'>
                     { res.map( strand => 
                     <Post key={strand.id} author={strand.author} 
                     title={strand.title} create_at={this.formatTime(dayjs(strand.create_at))}
@@ -104,7 +104,11 @@ class Main extends Component {
                     tab={strand.tab} good={strand.good} top={strand.top} id={strand.id} />
                     ) }
                 </div>
-                <Footer currentCategory='首页'></Footer>
+                <Footer currentCategory='首页'></Footer></div> :
+                <div><span>Loading...</span></div>
+            
+            }
+                
             </div>
         )
     }

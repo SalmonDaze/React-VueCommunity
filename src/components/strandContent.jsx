@@ -4,19 +4,6 @@ import { Footer } from './Footer'
 import { apiGet } from '../utils/apiRequest'
 import { Header } from './header'
 
-class reply extends Component {
-    constructor(props){
-        super(props)
-    }
-
-    render(){
-        return (
-            <div className='strand_reply'>
-            </div>
-        )
-    }
-}
-
 class Author extends Component{
     constructor(props){
         super(props)
@@ -74,10 +61,9 @@ export class strandContent extends Component{
     componentWillMount(){
        this.getData()
     }
-    
+
     render(){
 
-        console.log(this.state.content)
         let inner = this.state.isLoading ? 
         <div><span>Loading...</span></div> : 
         <div>

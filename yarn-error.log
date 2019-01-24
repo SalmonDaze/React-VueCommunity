@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.13.0/libexec/bin/yarn.js --cwd /Users/apple/Documents/GitHub/React-VueCommunity
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.13.0/libexec/bin/yarn.js add redux-devtools-extensio
 
 PATH: 
-  /usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/apple/Documents/GitHub/React-VueCommunity/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 Yarn version: 
   1.13.0
@@ -14,7 +14,17 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: ENOENT: no such file or directory, copyfile '/Users/apple/Library/Caches/Yarn/v4/npm-ansi-styles-2.2.1-b432dd3358b634cf75e1e4664368240533c1ddbe/node_modules/ansi-styles/package.json' -> '/Users/apple/Documents/GitHub/React-VueCommunity/node_modules/node-sass/node_modules/ansi-styles/package.json'
+  Error: http://192.168.0.236:8081/repository/djcpsnpm-group/redux-devtools-extensio: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:66255:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:129397:22)
+      at Request.emit (events.js:182:13)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:130369:10)
+      at Request.emit (events.js:182:13)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:130291:12)
+      at Object.onceWrapper (events.js:273:13)
+      at IncomingMessage.emit (events.js:187:15)
+      at endReadableNT (_stream_readable.js:1094:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
 
 npm manifest: 
   {
@@ -24,6 +34,7 @@ npm manifest:
     "dependencies": {
       "@babel/core": "7.1.6",
       "@svgr/webpack": "2.4.1",
+      "axios": "^0.18.0",
       "babel-core": "7.0.0-bridge.0",
       "babel-eslint": "9.0.0",
       "babel-jest": "23.6.0",
@@ -34,6 +45,7 @@ npm manifest:
       "case-sensitive-paths-webpack-plugin": "2.1.2",
       "chalk": "2.4.1",
       "css-loader": "1.0.0",
+      "dayjs": "^1.8.0",
       "dotenv": "6.0.0",
       "dotenv-expand": "4.2.0",
       "eslint": "5.6.0",
