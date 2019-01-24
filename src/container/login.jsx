@@ -12,7 +12,6 @@ class Login extends Component{
             token: ''
         }
     }
-
     render(){
         return(
             <div className='login_con'>
