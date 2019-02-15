@@ -158,3 +158,16 @@ a{
     width: 300px;
     background: skyblue;
 }
+.user_wel{
+    
+}
+.userContainer{
+    text-align: center;
+    padding-top: 20px;
+}
+.user_avatar{
+    margin-top: 10px;
+    width:130px;
+    height: 130px;
+    border-radius: 100%;
+}

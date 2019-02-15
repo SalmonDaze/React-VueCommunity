@@ -6,6 +6,8 @@ export const logStatus = async (state = '', action ) => {
             let res = await apiPost('https://www.vue-js.com/api/v1/accesstoken/', { accesstoken: action.token})
             if(res.data.success){
                 localStorage.setItem('accessToken', action.token)
+                localStorage.setItem('loginname', res.data.loginname)
+                window.location.reload()
                 return action.token
             }else{
                 return ''
