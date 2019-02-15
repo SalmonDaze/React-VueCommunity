@@ -18,7 +18,7 @@ export const apiGet = async (url, params) => {
     })
 }
 
-export const asyncapiPost = async (url, data) => {
+export const apiPost = async (url, data) => {
     let res = await axios({
         method: 'post',
         url,

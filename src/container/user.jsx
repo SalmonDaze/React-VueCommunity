@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Footer } from '../components/Footer'
-import Login from './handleLogin'
+import Login from '../components/handleLogin'
 
 export class User extends Component {
     constructor(props){
