@@ -112,6 +112,26 @@ a{
     width: 300px;
     height: 50px;
 }
+.add_collect{
+    position: relative;
+    left: 250px;
+    bottom: 15px;
+}
+.add_collect > button {
+    padding: 5px 8px 8px 5px;
+    border: none;
+    color: rgb(37, 122, 248);
+    background: rgb(155, 193, 250);
+    font-family:Arial;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-weight: bold;
+}
 .topic_author_name{
     position:relative;
     margin-left: 15px;
