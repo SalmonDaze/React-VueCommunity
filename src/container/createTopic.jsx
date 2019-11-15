@@ -10,7 +10,6 @@ export class createTopic extends Component {
         return (
             <div>
                 <h1>this is createTopic</h1>
-                <Footer currentCategory='发表'></Footer>
             </div>
         )
     }

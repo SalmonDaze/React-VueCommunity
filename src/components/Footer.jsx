@@ -1,8 +1,15 @@
 import React, { Component } from 'react'
 import '../Style/main.css'
-import { Link } from 'react-router-dom'
+import { NavLink, Link, withRouter } from 'react-router-dom'
+import BottomNavigation from '@material-ui/core/BottomNavigation'
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction'
+import RestoreIcon from '@material-ui/icons/Restore';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import ContactMailIcon from '@material-ui/icons/ContactMail';
+import { makeStyles } from '@material-ui/core/styles';
 
-class Category extends Component{
+export class Category extends Component{
     constructor(props){
         super(props)
     }
@@ -17,33 +24,48 @@ class Category extends Component{
         )
     }
 }
-
- export class Footer extends Component {
+export class Footer extends Component {
      constructor(props){
          super(props)
+         this.state = {
+             value: 0
+         }
      }
+
+     handleUrl( index ) {
+         console.log(index)
+        this.setState({
+            value: index
+        })
+     }
+
      render(){
         const section = [{
             title: '首页',
             url: '/index',
+            icon: <RestoreIcon />
         },{
             title: '发表',
             url: '/createTopic',
+            icon: <FavoriteIcon />
         },{
             title: '消息',
             url: '/message',
+            icon: <LocationOnIcon />
         },{
             title: '我的',
             url: '/user',
+            icon: <ContactMailIcon />
         }]
         let { currentCategory } = this.props
          return (
              <div className='FooterBar'>
-                {section.map( sec => 
-                <Link to={sec.url}  key={sec.title}>
-                    <Category title={sec.title} status={ currentCategory === sec.title }></Category>
-                </Link> 
-                )}
+                <BottomNavigation value={this.state.value} showLabels style={{width: '100%'}} onChange={(e, newVal) => this.handleUrl(newVal)} >
+                    {section.map( sec => 
+                            <BottomNavigationAction key={sec.url} label={sec.title} icon={sec.icon} component={Link} to={sec.url}>
+                            </BottomNavigationAction>
+                        )}
+                </BottomNavigation>
              </div>
          )
      }

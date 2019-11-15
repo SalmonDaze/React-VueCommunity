@@ -11,7 +11,6 @@ export class Message extends Component {
         return (
             <div>
                 <h1>this is message</h1>
-                <Footer currentCategory='消息'></Footer>
             </div>
         )
     }

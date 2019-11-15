@@ -7,12 +7,13 @@ import { Provider } from 'react-redux'
 import rootReducer from './config/store.jsx'
 import { createStore } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
+import { Footer } from './components/Footer'
 
 const store = createStore(rootReducer, composeWithDevTools())
 
 ReactDOM.render(
     <Provider store={store}>
-        {route}
+        { route }
     </Provider>,
      document.getElementById('root'));
 

@@ -58,7 +58,6 @@ export class User extends Component {
             Loading ?  <div>Loading.....</div> : 
                 <div>
                 { Object.keys(userStatus) == 0 ? <Loginbox handleInput={(e)=>{this.setState({token: e.target.value})}} token={token} />  : <Userinfo score={userStatus.score} create_at={userStatus.create_at.slice(0, userStatus.create_at.indexOf('T'))} loginname={userStatus.loginname} avatar={userStatus.avatar_url}/>}
-                <Footer currentCategory='我的'></Footer>
                 </div>
         )
     }
